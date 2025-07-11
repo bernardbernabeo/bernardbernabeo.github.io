@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bernard Bernabeo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      text-align: right;
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff7e5f;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem; /* add gap between text and image */
+      padding: 2rem 4rem; /* reduce vertical padding a bit */
+      flex-wrap: wrap; /* so on small screens it stacks nicely */
+    }
+
+    .hero-text {
+      flex: 1 1 350px;
+      text-align: center;
+      padding: 0;
+    }
+
+    .hero-text h1 {
+     font-family: 'Poppins', serif;  /* You can also try 'Georgia', 'Roboto Slab', etc. */
+     font-size: 6rem;                /* Adjust size: try 2.5rem, 4rem, etc. */
+     font-weight: 700;
+     color: #ffffff;
+     text-align: center;
+     margin-top: 2rem;
+    }
+
+    .welcome-text {
+      font-size: 1.75rem;
+      font-family: 'Georgia', serif;
+      color: #ffebcd;
+      margin-bottom: 0.75rem;
+      font-style: italic;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .typing-text {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-top: 1rem;
+      height: 40px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+      animation: blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #fff; }
+    }
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      margin-right: 1rem;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .btn {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background-color: #ff7e5f;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #feb47b;
+    }
+
+    .hero-image {
+      flex: 1 1 350px;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .hero-image img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* === ABOUT SECTION === */
+#about {
+  padding: 6rem 4rem;
+  background-color: transparent;
+  color: #f0f0f0;
+}
+
+#about h2 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #ffebcd;
+  font-family: 'Poppins', serif;
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-family: 'Poppins', serif;
+}
+
+#about .about-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about-box {
+  flex: 1 1 250px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ccc;
+  font-family: 'Poppins', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: normal;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-box h3 {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  font-family: 'Poppins', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.about-box,
+.exp-item {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.about-box:hover,
+.exp-item:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  transform: translateY(-5px);
+}
+
+
+/* === EXPERIENCE SECTION === */
+#experience {
+  padding: 6rem 4rem;
+  background: transparent;
+  color: #f0f0f0;
+  font-family: 'Poppins', serif;
+}
+
+#experience h2 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: #ffebcd;
+  font-family: 'Poppins', serif;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.exp-item {
+  font-family: 'Poppins', serif;
+  font-size: 1.1rem;
+  font-weight: normal;
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ccc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.exp-item h3 {
+  font-family: 'Poppins', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.exp-item p {
+  font-style: normal;
+  color: #ccc;
+}
+
+.exp-item ul {
+  margin-top: 1rem;
+  list-style: disc inside;
+  color: #ddd;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.education-section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding-left: 0;
+  padding-right: 0;
+  transform: translateX(-20px);
+  position: relative;
+  font-family: 'Poppins', serif; 
+  color: #ccc;
+}
+
+/* Section heading */
+.education-block h2 {
+  text-align: left;
+  font-size: 4rem;
+  font-family: 'Poppins', serif;
+  margin-bottom: 2rem;
+  color: #ffebcd; /* Accent color */
+  font-weight: 700;
+}
+
+/* Timeline vertical line */
+.education-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.education-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #ffffff;
+  transform: translateX(-50%);
+  border-radius: 1px;
+  z-index: 0;
+}
+
+/* Each education entry */
+.education-item {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  color: #ccc;
+  font-family: 'Poppins', serif;
+  font-size: 4rem;  /* Frame text size */
+}
+
+/* School logo on line */
+.edu-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid white;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  display: block;  /* Make sure <a> behaves like a block element */
+  text-decoration: none; /* Remove link underline */
+}
+
+.edu-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* or 'cover' depending on your visual preference */
+  border-radius: 50%;
+  display: block;
+}
+
+/* Frames: just padding, border-radius, subtle shadow, transparent background */
+.edu-main-frame,
+.edu-courses-frame {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  font-family: 'Poppins', serif;
+  font-size: 4rem;
+}
+
+/* Headings inside frames use accent color */
+.edu-main-frame h3,
+.edu-courses-frame h4 {
+  font-weight: 600;
+  font-size: 1.5rem; /* increased heading size to match */
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphs and lists inherit font and color */
+.edu-main-frame p,
+.edu-courses-frame ul {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+  color: inherit;
+}
+
+.edu-courses-frame ul {
+  padding-left: 1.2rem;
+}
+
+/* Responsive stacking */
+@media (max-width: 700px) {
+  .education-container::before {
+    display: none;
+  }
+  .education-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .edu-logo {
+    position: static;
+    transform: none;
+    margin-bottom: 1rem;
+    width: 50px;
+    height: 50px;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  .edu-main-frame,
+  .edu-courses-frame {
+    width: 100%;
+  }
+}
+.edu-courses-frame {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.edu-main-frame:hover,
+.edu-courses-frame:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}}
+
+.edu-main-frame, .edu-courses-frame {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.edu-main-frame:hover, .edu-courses-frame:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.edu-cert-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+
+.education-block {
+  flex: 1 1 60%;
+}
+
+.certification-block {
+  flex: 1 1 35%;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(255, 255, 255, 0.1);
+  font-family: 'Poppins', serif;
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+.certification-block h2 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cert-card {
+  margin-bottom: 1.2rem;
+  padding: 0.8rem;
+  background-color: rgba(255,255,255,0.03);
+  border-left: 3px solid #0dcaf0;
+  border-radius: 4px;
+}
+
+/* Both boxes share styles */
+.tools-frame,
+.networking-frame {
+  flex: 1 1 45%;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(255, 255, 255, 0.1);
+  font-family: 'Poppins', serif;
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+/* Headings */
+.tools-frame h3,
+.networking-frame h3 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Bullet points */
+.tools-frame ul,
+.networking-frame ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.logo-grid img {
+  height: 100px;
+  width: 100px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.3rem;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  object-fit: contain;
+}
+
+.logo-grid img:hover {
+  transform: scale(1.1);
+}
+
+   /* SECTION HEADINGS */
+    #projects h2,
+    #applied-data-projects h2,
+    #engineering-portfolio h2 {
+      font-family: 'Poppins', serif !important;
+      color: #ffffff !important;
+      font-size: 4rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 2rem !important;
+      margin-top: 10rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 2.5rem;
+      padding-top: 2rem;
+    }
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+    }
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .project-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      background-color: #transparent;
+      font-family: 'Poppins', sans-serif;
+    }
+    .project-content h3 {
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-content p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+    .project-content a {
+      font-family: 'Poppins', sans-serif;      
+      align-self: flex-start;
+      text-decoration: none;
+      color: #9bdfff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    .project-content a:hover {
+      color: #ff7e5f;
+    }
+
+   #contact {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(255,255,255,0.1);
+  font-family: 'Poppins', serif;
+  color: #f0f0f0;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+#contact form {
+  display: grid;
+  gap: 1.2rem;
+}
+
+#contact label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #eee;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 1px solid #888;
+  border-radius: 8px;
+  color: #eee;
+  font-family: 'Poppins', serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #66aaff;
+  box-shadow: 0 0 8px rgba(102,170,255,0.4);
+  outline: none;
+}
+
+#contact button {
+  padding: 0.75rem 1rem;
+  background: #66aaff;
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#contact button:hover {
+  background: #559eea;
+  transform: translateY(-2px);
+}
+
+.contact-links {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.contact-links a {
+  display: inline-block;
+  margin: 0 1rem;
+  color: #66aaff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header>
+  <div class="hero-text">
+    <p class="welcome-text">Welcome to my portfolio!</p>
+    <h1>Bernard Bernabeo</h1>
+    <div class="typing-text" id="typing"></div>
+    <div class="social-icons">
+      <a href="https://linkedin.com/in/bmbernabeo" target="_blank">
+        <img src="images/linkedin-logo.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/bernardbernabeo" target="_blank">
+        <img src="images/github_logo.png" alt="github">
+      </a>
+      <a href="https://instagram.com/bmbernabeo" target="_blank">
+        <img src="images/ig-logo.png" alt="Instagram">
+      </a>
+
+    </div>
+    <button class="btn" onclick="location.href='#projects'">Explore My Work</button>
+    <br />
+    <button class="btn" onclick="location.href='Bernard_Bernabeo_Resume.pdf'">Download Resume</button>
+  </div>
+  <div class="hero-image">
+    <img src="images/profile-5.jpg" alt="Bernard Bernabeo">
+  </div>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>Hello! I'm Bernard Bernabeo, a passionate and adaptable data analytics student with a background in project management and civil engineering. My academic training and hands-on experiences across multiple sectors have shaped my ability to analyze data, manage complex operations, and drive process improvements.</p>
+
+  <p>I believe in using data and collaboration to solve real-world problems—whether it's optimizing inventory flow or ensuring the timely delivery of infrastructure projects. I enjoy transforming raw information into clear, actionable insights and seeing those insights lead to impact.</p>
+
+  <div class="about-boxes">
+    <div class="about-box">
+      <h3>Critical Thinker</h3>
+      <p>I analyze problems from multiple angles and develop logical, data-driven solutions that align with goals.</p>
+    </div>
+    <div class="about-box">
+      <h3>Collaborative Team Player</h3>
+      <p>My experience working with cross-functional teams has made me a skilled communicator and empathetic leader.</p>
+    </div>
+    <div class="about-box">
+      <h3>Technically Curious</h3>
+      <p>From Python to SQL to dashboard tools like Looker Studio, I'm always exploring how tech can streamline and strengthen outcomes.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2 style="font-family: 'Poppins', serif;">Hands-On Experience</h2>
+  <div class="experience-grid">
+
+    <!-- Data Analytics Student -->
+    <div class="exp-item">
+      <h3>Data Analytics Student</h3>
+      <div class="exp-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <a href="https://langara.ca" target="_blank" rel="noopener noreferrer">
+          <img src="images/langara-logo.jpeg" alt="Langara Logo" style="width: 100px; height: auto;">
+        </a>
+        <div>
+          <p><strong>Langara College</strong></p>
+          <p><em>Post-Degree in Data Analytics</em></p>
+          <p><em>Vancouver, BC</em></p>
+          <p><em>September 2024 – Present</em></p>
+          <p><em>Expected Graduation: March 2026</em></p>
+        </div>
+      </div>
+      <p>
+        Completed coursework involving real-world datasets, including data cleaning, visualization, and predictive modeling.
+        Through these projects, I developed skills in Python, R Studio, SQL, Excel, and dashboard tools such as Looker Studio.
+        I also collaborated on team-based assignments to solve business problems using data-driven approaches.
+      </p>
+    </div>
+
+    <!-- Engineering Roles & Project Management -->
+    <div class="exp-item">
+      <h3>Engineering Roles & Project Management</h3>
+      <div class="exp-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <a href="https://www.lta.gov.sg" target="_blank" rel="noopener noreferrer">
+          <img src="images/lta-logo.png" alt="Land Transport Authority Logo" style="width: 100px; height: auto;">
+        </a>
+        <div>
+          <p><strong>Land Transport Authority</strong></p>
+          <p><em>Singapore</em></p>          
+          <p><em>Project Engineer</em></p>
+          <p><em>July 2013 – August 2024</em></p>
+        </div>
+      </div>
+      <p>
+        Over more than a decade, I progressed through multiple engineering roles, coordinating cross-functional teams to deliver
+        infrastructure projects while ensuring strict compliance with safety, technical, and timeline requirements.
+        I prepared technical reports, managed project schedules and resources, and applied analytical skills to identify and mitigate
+        risks, minimizing operational disruptions. This experience honed my leadership, communication, and problem-solving skills
+        in complex and high-pressure environments.
+      </p>
+    </div>
+
+    <!-- Fast-Paced Retail Environment -->
+    <div class="exp-item">
+      <h3>Fast-Paced Retail Environment</h3>
+      <div class="exp-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <a href="https://www.loblaws.ca" target="_blank" rel="noopener noreferrer">
+          <img src="images/loblaws-logo.png" alt="Loblaws Logo" style="width: 100px; height: auto;">
+        </a>
+        <div>
+          <p><strong>Loblaws City Market (Arbutus)</strong></p>
+          <p><em>Vancouver, BC</em></p>
+          <p><em>Produce Clerk</em></p>
+          <p><em>January 2025 – Present</em></p>
+        </div>
+      </div>
+      <p>Keep the produce section running smoothly through restocking, rotation, and display upkeep, while offering helpful and courteous service to shoppers. Known for reliability, teamwork, and a strong focus on customer satisfaction.</p>
+         </div>
+
+  </div>
+</section>
+ <div class="edu-cert-wrapper">
+ <section class="education-block">
+  <h2>Education</h2>
+
+  <div class="education-container">
+
+    <div class="education-item">
+      <a href="https://langara.ca" target="_blank" rel="noopener noreferrer" class="edu-logo">
+      <img src="images/langara-logo.jpeg" alt="Langara Logo" />
+      </a>
+      <div class="edu-main-frame">
+        <h3>Post-Degree Diploma in Data Analytics</h3>
+        <p><strong>Langara College</strong></p>
+        <p>Vancouver, BC</p>
+        <p><em>September 2024 – Present<br>Expected Completion: March 2026</em></p>
+      </div>
+      <div class="edu-courses-frame">
+        <h4>Relevant Courses:</h4>
+        <ul>
+          <li>Qualitative and Quantitative Data Analysis</li>
+          <li>Dimension Reduction</li>
+          <li>Classification I & II</li>
+          <li>Data Mining and Transformation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="education-item">
+      <a href="https://www.mapua.edu.ph/" target="_blank" rel="noopener noreferrer" class="edu-logo">
+      <img src="images/mapua-logo.png" alt="Mapúa University Logo" />
+      </a>
+
+      <div class="edu-main-frame">
+        <h3>Bachelor of Science in Civil Engineering</h3>
+        <p><strong>Mapúa University</strong></p>
+        <p>Manila, Philippines</p>
+        <p><em>July 2003 – July 2007</em></p>
+      </div>
+      <div class="edu-courses-frame">
+        <h4>Relevant Courses:</h4>
+        <ul>
+          <li>Structural Design & Analysis</li>
+          <li>Soil Mechanics</li>
+          <li>Hydraulics</li>
+          <li>Construction Management & Planning</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<aside class="certification-block">
+    <h2>Certifications</h2>
+    <div class="cert-card">
+      <p><strong>SQL (Basic) Certificate</strong></p>
+      <a href="https://www.hackerrank.com/certificates/25e32378183c" target="_blank" class="cert-link">View Certificate (PDF)</a>    
+    </div>
+    <div class="cert-card">
+      <p><strong>CITI Program Course on Data or Specimen Only Research</strong></p>
+     <a href="citiCompletionCertificate.pdf" target="_blank" class="cert-link">View Certificate (PDF)</a>
+  </div>
+<div class="cert-card">
+      <p><strong>Professional Civil Engineer(Philippines)</strong></p>
+     <a href="PH Licensed Civil Engineer _Certificate_rotated.pdf" target="_blank" class="cert-link">View Certificate (PDF)</a>
+  </div>
+    <!-- Add more certifications here -->
+  </aside>
+</div>
+
+<div class="skills-wrapper">
+  <!-- Programming Tools Frame -->
+  <div class="tools-frame">
+    <h3>Languages & Tools</h3>
+    <div class="logo-grid">
+      <img src="images/python-logo.png" alt="Python" title="Python">
+      <img src="images/sql-logo.png" alt="SQL" title="SQL">
+      <img src="images/rstudio-logo.jpg" alt="R" title="R">
+      <img src="images/excel-logo.png" alt="Excel" title="Excel">
+      <img src="images/looker-logo.png" alt="Google Looker" title="Google Looker">
+      <img src="images/github_logo.png" alt="GitHub" title="GitHub">
+    </div>
+  </div>
+
+  <!-- Networking & Affiliations Frame -->
+  <div class="networking-frame">
+    <h3>Professional Affiliations</h3>
+    <div class="logo-grid">
+      <img src="images/pice-logo.png" alt="PICE" title="Philippine Institute of Civil Engineers">
+      <img src="images/ies-logo.png" alt="IES" title="Institution of Engineers Singapore">
+      <img src="images/dama-logo.png" alt="DAMA-Vancouver" title="DAMA Vancouver Chapter">
+      <img src="images/linkeding-logo.png" alt="Tech2Step Canada" title="Tech2Step Canada">
+    </div>
+  </div>
+</div>
+
+<section id="projects">
+  <h2 style="font-size: 3rem;  font-family: 'Poppins', serif; text-align: left; color: #f0f0f0; margin-bottom: 3rem;">Projects</h2>
+
+  <!-- APPPLIED DATA ANALYTICS -->
+    <h3 style="font-size: 3rem;  font-family: 'Poppins', serif; text-align: left; color: #f0f0f0; margin-bottom: 3rem;">Applied Data Analytics Projects</h3>
+    <div class="project-wrapper">
+    <!-- Row 1: 3 Cards -->
+    <div class="projects-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
+      <div class="project-card" style="flex: 0 0 calc(33.333% - 1.5rem); min-width: 280px;">
+        <img src="images/wildfire.jpg" alt="BC Wildfire Incidents" class="project-image" />
+        <div class="project-content">
+          <h3>BC Wildfire Incidents</h3>
+          <p>Analyzed a sizable wildfire incident time-series dataset spanning 10 years using R, applying end-to-end data processing including cleaning, wrangling, exploratory analysis, and visualization. This project showcased skills in transforming raw data into compelling visual stories that highlight key wildfire risk drivers.</p>
+          <a href="https://github.com/bernardbernabeo/BC-Wildfire.git" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card" style="flex: 0 0 calc(33.333% - 1.5rem); min-width: 280px;">
+        <img src="images/globalhealth.jpg" alt="Global Health" class="project-image" />
+        <div class="project-content">
+          <h3>Global Health</h3>
+          <p>Applied R programming and Qualitative Data Analysis techniques in a course project to preprocess, explore, and interpret a 10-year global health dataset, uncovering critical socioeconomic and environmental factors influencing disparities in life expectancy and infant mortality.</p>
+          <a href="https://github.com/bernardbernabeo/Global-Health-Disparities.git" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card" style="flex: 0 0 calc(33.333% - 1.5rem); min-width: 280px;">
+        <img src="images/ecommerce.jpg" alt="Ecommerce" class="project-image" />
+        <div class="project-content">
+          <h3>E-Commerce: Brazilian Orders by OList</h3>
+          <p>Analyzed the Brazilian Orders Dataset by Olist to explore customer distribution, sales trends, and product performance by category. Used Python for data cleaning, transformation, exploratory data analysis, and visualization. Developed a model to improve delivery date predictions, enhancing insights into the customer purchasing experience.</p>
+          <a href="https://github.com/bernardbernabeo/E-commerce_Brazilian-Orders-.git" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: 2 Cards, Right-Aligned -->
+    <div class="projects-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: flex-end; margin-top: 2rem;">
+      <div class="project-card" style="flex: 0 0 calc(33.333% - 1.5rem); min-width: 280px;">
+        <img src="images/penguins.jpg" alt="Palmer Penguins" class="project-image" />
+        <div class="project-content">
+          <h3>Palmer Penguins</h3>
+          <p>Performed data cleaning, exploratory data analysis, transformation, feature selection, and modeling using R on the Palmer Penguins dataset. Investigated relationships among physical and environmental variables to identify key predictors of body mass and ecological differences across species.</p>
+          <a href="https://github.com/bernardbernabeo/Palmer-Penguins.git" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card" style="flex: 0 0 calc(33.333% - 1.5rem); min-width: 280px;">
+        <img src="images/mimic.jpeg" alt="MIMIC-IV Data Extraction" class="project-image" />
+        <div class="project-content">
+          <h3>MIMIC-IV Data Extraction</h3>
+          <p>Extracted relevant patient data from MIMIC-IV using SQL, guided by Liu et al. (2022) on weaning models for sepsis patients. Demonstrated proficiency in SQL and database navigation while ensuring ethical compliance through CITI certification.</p>
+          <a href="https://github.com/bernardbernabeo/MIMIC-IV-Data-Extraction.git" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ENGINEERING PROJECTS -->
+  <div>
+    <h3 style="font-size: 3rem; font-family: 'Poppins', serif; text-align: left; color: #f0f0f0;margin-bottom: 3rem; margin-top: 7rem;">Engineering  and Construction Portfolio</h3>
+    <div class="projects-grid" style="display: flex; flex-wrap: wrap; gap: rem;">
+
+      <!-- Sub-frame 1 -->
+      <div class="project-card" style="flex: 1 1 calc(33.333% - 2rem); min-width: 280px;">
+        <img src="images/KCDE1.jpg" alt="Kim Chuan Depot Extension Project" class="project-image" />
+        <div class="project-content">
+          <h3>Kim Chuan Depot Extension</h3>
+          <p>Involved in the expansion of Kim Chuan Depot, one of the world’s largest underground train depots, doubling its capacity to support 133 trains and adding a new 550-bus depot above ground. Scope included underground civil works, stabling and maintenance facilities, and integrated services coordination.</p>
+        </div>
+      </div>
+
+      <!-- Sub-frame 2 -->
+      <div class="project-card" style="flex: 1 1 calc(33.333% - 2rem); min-width: 280px;">
+        <img src="images/CBR.jpg" alt="Construction of Canberra Station" class="project-image" />
+        <div class="project-content">
+          <h3>Canberra MRT Station</h3>
+          <p>Executed construction works for Canberra Station, an elevated MRT station built over operational tracks on Singapore’s North-South Line. Scope included structural works, linkbridge, roadworks, and commuter facilities, with emphasis on live rail coordination and passenger safety.</p>
+        </div>
+      </div>
+
+      <!-- Sub-frame 3 -->
+      <div class="project-card" style="flex: 1 1 calc(33.333% - 2rem); min-width: 280px;">
+        <img src="images/cck.jpg" alt="Upgrading Works at CCK Interchange Stations" class="project-image" />
+        <div class="project-content">
+          <h3>Upgrading Works at Choa Chu Kang Interchange Stations </h3>
+          <p>Delivered the upgrade of Choa Chu Kang MRT and LRT interchange stations, including construction of additional platforms, modern fare gates, and improved accessibility—while managing active passenger flow and operational constraints.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>  
+
+<section id="contact">
+  <h2>Get In Touch</h2>
+  <p class="subtitle">Interested in collaborating or just want to say hi? My inbox is always open!</p>
+  <form action="#" method="post" novalidate>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" required placeholder="Your name">
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required placeholder="Your message..."></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="contact-links">
+    <a href="mailto:bmbernabeo@yahoo.com">📧 bmbernabeo@yahoo.com</a>
+    <a href="https://linkedin.com/in/bmbernabeo" target="_blank">🔗 linkedin.com/in/bmbernabeo</a>
+  </div>
+</section>
+
+<script>
+  const roles = ["Data Analytics Student", "Project Management", "Civil Engineer", "Problem Solver"];
+  let roleIndex = 0;
+  let charIndex = 0;
+  const typingDiv = document.getElementById("typing");
+
+  function typeEffect() {
+    if (charIndex <= roles[roleIndex].length) {
+      typingDiv.innerHTML = roles[roleIndex].substring(0, charIndex);
+      charIndex++;
+      setTimeout(typeEffect, 100);
+    } else {
+      setTimeout(eraseEffect, 2000);
+    }
+  }
+
+  function eraseEffect() {
+    if (charIndex > 0) {
+      typingDiv.innerHTML = roles[roleIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(eraseEffect, 50);
+    } else {
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(typeEffect, 500);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+
+</body>
+</html>
