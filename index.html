@@ -26,22 +26,34 @@
       width: 100%;
       background: rgba(0, 0, 0, 0.6);
       padding: 1rem 2rem;
-      text-align: right;
       z-index: 1000;
       box-sizing: border-box;
     }
 
-    nav a {
-      color: #fff;
-      margin: 0 1.5rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
+    .nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    nav a:hover {
-      color: #ff7e5f;
-    }
+.nav-datetime {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+    .nav-links a {
+  margin-left: 1.5rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffebcd;
+}
 
     header {
       min-height: 100vh;
@@ -69,7 +81,7 @@
     }
 
     .welcome-text {
-      font-size: 1.75rem;
+      font-size: 3rem;
       font-family: 'Georgia', serif;
       color: #ffebcd;
       margin-bottom: 0.75rem;
@@ -137,7 +149,7 @@
     }
 
     .btn:hover {
-      background-color: #feb47b;
+      background-color: rgba(13, 110, 253, 0.1);
     }
 
     .hero-image {
@@ -250,8 +262,8 @@
 .exp-item h3 {
   font-family: 'Poppins', serif;
   font-weight: 700;
-  font-size: 1.1rem;
-  color: #ccc;
+  font-size: 2rem;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
@@ -452,29 +464,36 @@
 }
 
 .certification-block {
-  flex: 1 1 35%;
+  flex: 1 1 38%;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: transparent;
   border-radius: 6px;
-  box-shadow: 0 1px 6px rgba(255, 255, 255, 0.1);
+  box-shadow: 0;
   font-family: 'Poppins', serif;
   font-size: 1.5rem;
-  color: #ccc;
+  color: #ffffff;
 }
 
 .certification-block h2 {
-  font-size: 2rem;
-  color: #fff;
+  font-size: 4rem;
+  color: #ffebcd;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .cert-card {
   margin-bottom: 1.2rem;
+  padding: 1rem 1.5rem;
   padding: 0.8rem;
   background-color: rgba(255,255,255,0.03);
-  border-left: 3px solid #0dcaf0;
-  border-radius: 4px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+  background-color: rgba(13, 110, 253, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Both boxes share styles */
@@ -522,12 +541,22 @@
   background-color: rgba(255, 255, 255, 0.05);
   padding: 0.3rem;
   box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   object-fit: contain;
 }
 
 .logo-grid img:hover {
+   transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.affiliation-logo {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.affiliation-logo:hover {
   transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
    /* SECTION HEADINGS */
@@ -535,11 +564,11 @@
     #applied-data-projects h2,
     #engineering-portfolio h2 {
       font-family: 'Poppins', serif !important;
-      color: #ffffff !important;
+      color: #ffebcd !important;
       font-size: 4rem !important;
       font-weight: 700 !important;
-      margin-bottom: 2rem !important;
-      margin-top: 10rem;
+      margin-bottom: 1rem !important;
+      margin-top: 3rem;
     }
 
     .projects-grid {
@@ -599,7 +628,7 @@
       transition: color 0.3s ease;
     }
     .project-content a:hover {
-      color: #ff7e5f;
+      color: rgba(13, 110, 253, 0.1);
     }
 
    #contact {
@@ -670,7 +699,7 @@
 }
 
 #contact button:hover {
-  background: #559eea;
+  background: rgba(13, 110, 253, 0.1);
   transform: translateY(-2px);
 }
 
@@ -696,9 +725,13 @@
 <body>
 
 <nav>
+  <div class="nav-content">
+    <div class="nav-datetime" id="datetime"></div>
+    <div class="nav-links">
   <a href="#about">About</a>
   <a href="#experience">Experience</a>
   <a href="#education">Education</a>
+  <a href="#certifications">Certifications</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -722,7 +755,7 @@
     </div>
     <button class="btn" onclick="location.href='#projects'">Explore My Work</button>
     <br />
-    <button class="btn" onclick="location.href='Bernard Bernabeo_Resume.pdf'">Download Resume</button>
+   <button class="btn" onclick="window.open('Resume_Bernard_Bernabeo.pdf')">Download Resume</button>
   </div>
   <div class="hero-image">
     <img src="images/profile-5.jpg" alt="Bernard Bernabeo">
@@ -731,9 +764,9 @@
 
 <section id="about">
   <h2>About Me</h2>
-  <p>Hello! I'm Bernard Bernabeo, a passionate and adaptable data analytics student with a background in project management and civil engineering. My academic training and hands-on experiences across multiple sectors have shaped my ability to analyze data, manage complex operations, and drive process improvements.</p>
+  <p>Hello! I'm Bernard, a passionate and adaptable data analytics student with a background in project management and civil engineering. My academic training and industry experience have shaped my ability to analyze complex data, manage projects effectively, and drive operational improvements.</p>
 
-  <p>I believe in using data and collaboration to solve real-world problems—whether it's optimizing inventory flow or ensuring the timely delivery of infrastructure projects. I enjoy transforming raw information into clear, actionable insights and seeing those insights lead to impact.</p>
+  <p>My goal is to integrate data analytics with project management to make smarter, evidence-based decisions that improve efficiency, reduce risk, and deliver measurable outcomes. I enjoy turning raw information into meaningful insights—and applying those insights to optimize workflows, support strategic planning, and solve real-world challenges.</p>
 
   <div class="about-boxes">
     <div class="about-box">
@@ -779,7 +812,7 @@
 
     <!-- Engineering Roles & Project Management -->
     <div class="exp-item">
-      <h3>Engineering Roles & Project Management</h3>
+      <h3>Engineering & Project Management</h3>
       <div class="exp-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
         <a href="https://www.lta.gov.sg" target="_blank" rel="noopener noreferrer">
           <img src="images/lta-logo.png" alt="Land Transport Authority Logo" style="width: 100px; height: auto;">
@@ -819,10 +852,10 @@
 
   </div>
 </section>
+  <a href="#education"></a>
  <div class="edu-cert-wrapper">
- <section class="education-block">
+<section class="education-block" id="education">
   <h2>Education</h2>
-
   <div class="education-container">
 
     <div class="education-item">
@@ -867,10 +900,10 @@
         </ul>
       </div>
     </div>
-
   </div>
 </section>
 
+<section id="certifications">
 <aside class="certification-block">
     <h2>Certifications</h2>
     <div class="cert-card">
@@ -907,19 +940,32 @@
   <div class="networking-frame">
     <h3>Professional Affiliations</h3>
     <div class="logo-grid">
-      <img src="images/pice-logo.png" alt="PICE" title="Philippine Institute of Civil Engineers">
-      <img src="images/ies-logo.png" alt="IES" title="Institution of Engineers Singapore">
-      <img src="images/dama-logo.png" alt="DAMA-Vancouver" title="DAMA Vancouver Chapter">
-      <img src="images/linkeding-logo.png" alt="Tech2Step Canada" title="Tech2Step Canada">
+      <a href="https://www.pice.org.ph" target="_blank" rel="noopener noreferrer">
+    <img src="images/pice-logo.png" alt="PICE" title="Philippine Institute of Civil Engineers">
+  </a>
+
+  <a href="https://www.ies.org.sg/" target="_blank" rel="noopener noreferrer">
+    <img src="images/ies-logo.png" alt="IES" title="Institution of Engineers Singapore">
+  </a>
+
+  <a href="https://www.dama.org/" target="_blank" rel="noopener noreferrer">
+    <img src="images/dama-logo.png" alt="DAMA-Vancouver" title="DAMA Vancouver Chapter">
+  </a>
+
+  <a href="https://www.linkedin.com/company/tech2stepca/" target="_blank" rel="noopener noreferrer">
+    <img src="images/linkeding-logo.png" alt="Tech2Step Canada" title="Tech2Step Canada">
+  </a>
+
     </div>
   </div>
 </div>
 
 <section id="projects">
-  <h2 style="font-size: 3rem;  font-family: 'Poppins', serif; text-align: left; color: #f0f0f0; margin-bottom: 3rem;">Projects</h2>
+  <h2>Projects</h2>
+  <h2 style="font-size: 4rem;  font-family: 'Poppins', serif; text-align: left; color: #f0f0f0"></h2>
 
   <!-- APPPLIED DATA ANALYTICS -->
-    <h3 style="font-size: 3rem;  font-family: 'Poppins', serif; text-align: left; color: #f0f0f0; margin-bottom: 3rem;">Applied Data Analytics Projects</h3>
+    <h3 style="font-size: 3rem;  font-family: 'Poppins', serif; text-align: left; color: #f0f0f0; margin-bottom: rem;">Applied Data Analytics Projects</h3>
     <div class="project-wrapper">
     <!-- Row 1: 3 Cards -->
     <div class="projects-grid" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
@@ -1034,7 +1080,7 @@
 </section>
 
 <script>
-  const roles = ["Data Analytics Student", "Project Management", "Civil Engineer", "Problem Solver"];
+  const roles = ["Data Analytics Student", "Project Management", "Civil Engineer", "Anaytical Thinker", "Detail-Oriented", "Dedicated", "Reliable", "Hardworking" ];
   let roleIndex = 0;
   let charIndex = 0;
   const typingDiv = document.getElementById("typing");
@@ -1061,6 +1107,24 @@
   }
 
   document.addEventListener("DOMContentLoaded", typeEffect);
+</script>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const options = {
+      weekday: 'short',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    };
+    document.getElementById('datetime').textContent = now.toLocaleString('en-US', options);
+  }
+
+  updateDateTime(); // Initial call
+  setInterval(updateDateTime, 60000); // Update every 60 seconds
 </script>
 
 </body>
