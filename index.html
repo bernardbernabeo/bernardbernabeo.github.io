@@ -720,32 +720,6 @@
   text-decoration: underline;
 }
 
-.fade-slideshow {
-  position: relative;
-  width: 100%;
-  max-width: 600px; /* Optional limit */
-  margin: auto;
-  overflow: hidden;
-}
-
-.fade-slide {
-  width: 100%;
-  height: auto;
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: contain;
-  transition: opacity 1s ease-in-out;
-}
-
-.fade-slide.active {
-  display: block;
-  position: relative;
-  opacity: 1;
-  z-index: 1;
-}
-
   </style>
 </head>
 <body>
@@ -1106,48 +1080,27 @@ Exhibited foresight, attention to detail, and agility in balancing safety, commu
     </div>
   </div>
 </section>  
+<section id="contact">
+  <h2>Get In Touch</h2>
+  <p class="subtitle">Interested in collaborating or just want to say hi? My inbox is always open!</p>
+<form action="mailto:bmbernabeo@yahoo.com" method="post" enctype="text/plain" novalidate>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" required placeholder="Your name">
 
-<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
-  
-  <!-- Contact Section -->
-  <section id="contact" style="flex: 1; min-width: 300px;">
-    <h2>Get In Touch</h2>
-    <p class="subtitle">Interested in collaborating or just want to say hi? My inbox is always open!</p>
-    <form action="mailto:bmbernabeo@yahoo.com" method="post" enctype="text/plain" novalidate>
-      <label for="name">Name</label>
-      <input id="name" name="name" type="text" required placeholder="Your name">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required placeholder="you@example.com">
 
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required placeholder="you@example.com">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required placeholder="Your message..."></textarea>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required placeholder="Your message..."></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 
-      <button type="submit">Send Message</button>
-    </form>
-
-    <div class="contact-links">
-      <a href="mailto:bmbernabeo@yahoo.com">📧 bmbernabeo@yahoo.com</a>
-      <a href="https://linkedin.com/in/bmbernabeo" target="_blank">🔗 linkedin.com/in/bmbernabeo</a>
-    </div>
-  </section>
-
-  <!-- Slideshow Section -->
-  <div class="fade-slideshow" style="flex: 1; min-width: 300px;">
-    <img src="images/photo1.jpg" class="fade-slide active" alt="Slideshow 1">
-    <img src="images/photo2.jpg" class="fade-slide" alt="Slideshow 2">
-    <img src="images/photo3.JPG" class="fade-slide" alt="Slideshow 3">
-    <img src="images/photo4.JPG" class="fade-slide active" alt="Slideshow 4">
-    <img src="images/photo5.jpg" class="fade-slide" alt="Slideshow 5">
-    <img src="images/photo6.JPG" class="fade-slide" alt="Slideshow 6">
-    <img src="images/photo7.JPG" class="fade-slide" alt="Slideshow 7">
-
-
-    <!-- Add more images if needed -->
+  <div class="contact-links">
+    <a href="mailto:bmbernabeo@yahoo.com">📧 bmbernabeo@yahoo.com</a>
+    <a href="https://linkedin.com/in/bmbernabeo" target="_blank">🔗 linkedin.com/in/bmbernabeo</a>
   </div>
-
-</div>
-
+</section>
   </section>
 </div>
 
@@ -1211,25 +1164,6 @@ Exhibited foresight, attention to detail, and agility in balancing safety, commu
   updateDateTime(); // Initial call
   setInterval(updateDateTime, 60000); // Update every 60 seconds
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".fade-slide");
-    let currentIndex = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-      });
-    }
-
-    showSlide(currentIndex);
-
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }, 4000);
-  });
-</script>
-
 </body>
 </html>
+
