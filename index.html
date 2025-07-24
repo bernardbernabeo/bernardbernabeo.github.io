@@ -720,6 +720,32 @@
   text-decoration: underline;
 }
 
+.fade-slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* Optional limit */
+  margin: auto;
+  overflow: hidden;
+}
+
+.fade-slide {
+  width: 100%;
+  height: auto;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-slide.active {
+  display: block;
+  position: relative;
+  opacity: 1;
+  z-index: 1;
+}
+
   </style>
 </head>
 <body>
@@ -973,6 +999,9 @@
         <img src="images/wildfire.jpg" alt="BC Wildfire Incidents" class="project-image" />
         <div class="project-content">
           <h3>BC Wildfire Incidents</h3>
+          <p><strong>September 2024 - December 2024</strong><br>
+          <strong>1st Term (Fall) 2024</strong><br>
+ 	        <strong>DANA4800 Business Statistics</strong></p><br>
           <p>Analyzed a sizable wildfire incident time-series dataset spanning 10 years using R, applying end-to-end data processing including cleaning, wrangling, exploratory analysis, and visualization. This project showcased skills in transforming raw data into compelling visual stories that highlight key wildfire risk drivers.</p>
           <a href="https://github.com/bernardbernabeo/BC-Wildfire.git" target="_blank">View on GitHub</a>
         </div>
@@ -982,6 +1011,9 @@
         <img src="images/globalhealth.jpg" alt="Global Health" class="project-image" />
         <div class="project-content">
           <h3>Global Health</h3>
+          <p><strong>January 2025 - April 2025</strong><br>
+          <strong>2nd Term (Spring) 2025</strong><br>
+ 	        <strong>DANA4820 Predictive Analytics - Qualitative Data</strong></p><br>
           <p>Applied R programming and Qualitative Data Analysis techniques in a course project to preprocess, explore, and interpret a 10-year global health dataset, uncovering critical socioeconomic and environmental factors influencing disparities in life expectancy and infant mortality.</p>
           <a href="https://github.com/bernardbernabeo/Global-Health-Disparities.git" target="_blank">View on GitHub</a>
         </div>
@@ -991,6 +1023,9 @@
         <img src="images/ecommerce.jpg" alt="Ecommerce" class="project-image" />
         <div class="project-content">
           <h3>E-Commerce: Brazilian Orders by OList</h3>
+           <p><strong>January 2025 - April 2025</strong><br>
+          <strong>2nd Term (Spring) 2025</strong><br>
+ 	        <strong>CPSC4810 Transformations for Data Analytics</strong></p><br>
           <p>Analyzed the Brazilian Orders Dataset by Olist to explore customer distribution, sales trends, and product performance by category. Used Python for data cleaning, transformation, exploratory data analysis, and visualization. Developed a model to improve delivery date predictions, enhancing insights into the customer purchasing experience.</p>
           <a href="https://github.com/bernardbernabeo/E-commerce_Brazilian-Orders-.git" target="_blank">View on GitHub</a>
         </div>
@@ -1003,6 +1038,9 @@
         <img src="images/penguins.jpg" alt="Palmer Penguins" class="project-image" />
         <div class="project-content">
           <h3>Palmer Penguins</h3>
+          <p><strong>January 2025 - April 2025</strong><br>
+          <strong>2nd Term (Spring) 2025</strong><br>
+ 	        <strong>DANA4810 Predictive Analytics - Quantitative Data </strong></p><br>
           <p>Performed data cleaning, exploratory data analysis, transformation, feature selection, and modeling using R on the Palmer Penguins dataset. Investigated relationships among physical and environmental variables to identify key predictors of body mass and ecological differences across species.</p>
           <a href="https://github.com/bernardbernabeo/Palmer-Penguins.git" target="_blank">View on GitHub</a>
         </div>
@@ -1012,6 +1050,9 @@
         <img src="images/mimic.jpeg" alt="MIMIC-IV Data Extraction" class="project-image" />
         <div class="project-content">
           <h3>MIMIC-IV Data Extraction</h3>
+	  <p><strong>May 2025 - August 2025</strong><br>
+          <strong>3rd Term (Summer) 2025</strong><br>
+ 	  <strong>DANA4830 Dimension Reduction and Classification I</strong></p><br>
           <p>Extracted relevant patient data from MIMIC-IV using SQL, guided by Liu et al. (2022) on weaning models for sepsis patients. Demonstrated proficiency in SQL and database navigation while ensuring ethical compliance through CITI certification.</p>
           <a href="https://github.com/bernardbernabeo/MIMIC-IV-Data-Extraction.git" target="_blank">View on GitHub</a>
         </div>
@@ -1023,15 +1064,18 @@
 
   <!-- ENGINEERING PROJECTS -->
   <div>
-    <h3 style="font-size: 3rem; font-family: 'Poppins', serif; text-align: left; color: #f0f0f0;margin-bottom: 3rem; margin-top: 7rem;">Engineering  and Construction Portfolio</h3>
+    <h3 style="font-size: 3rem; font-family: 'Poppins', serif; text-align: left; color: #f0f0f0;margin-bottom: 3rem; margin-top: 7rem;">Engineering and Project Management Portfolio</h3>
     <div class="projects-grid" style="display: flex; flex-wrap: wrap; gap: rem;">
 
       <!-- Sub-frame 1 -->
       <div class="project-card" style="flex: 1 1 calc(33.333% - 2rem); min-width: 280px;">
         <img src="images/KCDE1.jpg" alt="Kim Chuan Depot Extension Project" class="project-image" />
         <div class="project-content">
-          <h3>Kim Chuan Depot Extension</h3>
-          <p>Involved in the expansion of Kim Chuan Depot, one of the world’s largest underground train depots, doubling its capacity to support 133 trains and adding a new 550-bus depot above ground. Scope included underground civil works, stabling and maintenance facilities, and integrated services coordination.</p>
+          <h3>Kim Chuan Depot Extension for Circle Line 6</h3>
+           <p><strong>Project Engineer</strong><br>
+          <strong>April 2022 - August 2024</strong></p><br>
+ 	        <p>Involved in the expansion of Kim Chuan Depot, the world’s largest underground train depots, doubling its capacity to support 133 trains and adding a new 550-bus depot above ground. Scope included underground civil works, stabling and maintenance facilities, and integrated services coordination.</p>
+	        <p>Demonstrated strong collaboration, cross-functional communication, and problem-solving skills while working with multidisciplinary teams and adapting to evolving project requirements in a high-pressure environment.</p>
         </div>
       </div>
 
@@ -1039,8 +1083,11 @@
       <div class="project-card" style="flex: 1 1 calc(33.333% - 2rem); min-width: 280px;">
         <img src="images/CBR.jpg" alt="Construction of Canberra Station" class="project-image" />
         <div class="project-content">
-          <h3>Canberra MRT Station</h3>
-          <p>Executed construction works for Canberra Station, an elevated MRT station built over operational tracks on Singapore’s North-South Line. Scope included structural works, linkbridge, roadworks, and commuter facilities, with emphasis on live rail coordination and passenger safety.</p>
+          <h3>Construction of Canberra MRT Station</h3>
+           <p><strong>Prinicipal Assistant Project Engineer</strong><br>
+          <strong>July 2016 - April 2022</strong></p><br>
+          <p>Executed construction works for Canberra Station, an elevated MRT station built over operational tracks on Singapore’s North-South Line. Scope included structural works, linkbridge, roadworks, and commuter facilities, with emphasis on live rail coordination and passenger safety. The project achieved BCA Green Mark Platinum Certification for meeting sustainability standards.</p>
+	        <p>Exemplified cross-functional collaboration, precision under pressure, stakeholder alignment, and proactive planning in a highly constrained and safety-critical environment.</p>
         </div>
       </div>
 
@@ -1049,35 +1096,71 @@
         <img src="images/cck.jpg" alt="Upgrading Works at CCK Interchange Stations" class="project-image" />
         <div class="project-content">
           <h3>Upgrading Works at Choa Chu Kang Interchange Stations </h3>
-          <p>Delivered the upgrade of Choa Chu Kang MRT and LRT interchange stations, including construction of additional platforms, modern fare gates, and improved accessibility—while managing active passenger flow and operational constraints.</p>
-        </div>
+           <p><strong>Engineering Officer</strong><br>
+          <strong>July 2013 - July 2016</strong></p><br>
+          <p>Delivered the upgrade of Choa Chu Kang MRT and LRT interchange stations, including construction of additional platforms, modern fare gates, and improved accessibility while managing active passenger flow and operational constraints.</p>
+	        <p>Built strong stakeholder management skills, managing day-to-day coordination with operators, contractors, and the public.
+Exhibited foresight, attention to detail, and agility in balancing safety, commuter flow, and construction progress under tight constraints.</p>
       </div>
 
     </div>
   </div>
 </section>  
 
-<section id="contact">
-  <h2>Get In Touch</h2>
-  <p class="subtitle">Interested in collaborating or just want to say hi? My inbox is always open!</p>
-  <form action="#" method="post" novalidate>
-    <label for="name">Name</label>
-    <input id="name" name="name" type="text" required placeholder="Your name">
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+  
+  <!-- Contact Section -->
+  <section id="contact" style="flex: 1; min-width: 300px;">
+    <h2>Get In Touch</h2>
+    <p class="subtitle">Interested in collaborating or just want to say hi? My inbox is always open!</p>
+    <form action="#" method="post" novalidate>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required placeholder="Your name">
 
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required placeholder="you@example.com">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com">
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required placeholder="Your message..."></textarea>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required placeholder="Your message..."></textarea>
 
-    <button type="submit">Send Message</button>
-  </form>
+      <button type="submit">Send Message</button>
+    </form>
 
-  <div class="contact-links">
-    <a href="mailto:bmbernabeo@yahoo.com">📧 bmbernabeo@yahoo.com</a>
-    <a href="https://linkedin.com/in/bmbernabeo" target="_blank">🔗 linkedin.com/in/bmbernabeo</a>
+    <div class="contact-links">
+      <a href="mailto:bmbernabeo@yahoo.com">📧 bmbernabeo@yahoo.com</a>
+      <a href="https://linkedin.com/in/bmbernabeo" target="_blank">🔗 linkedin.com/in/bmbernabeo</a>
+    </div>
+  </section>
+
+  <!-- Slideshow Section -->
+  <div class="fade-slideshow" style="flex: 1; min-width: 300px;">
+    <img src="images/photo1.jpg" class="fade-slide active" alt="Slideshow 1">
+    <img src="images/photo2.jpg" class="fade-slide" alt="Slideshow 2">
+    <img src="images/photo3.jpg" class="fade-slide" alt="Slideshow 3">
+    <img src="images/photo4.jpg" class="fade-slide active" alt="Slideshow 4">
+    <img src="images/photo5.jpg" class="fade-slide" alt="Slideshow 5">
+    <img src="images/photo6.jpg" class="fade-slide" alt="Slideshow 6">
+
+    <!-- Add more images if needed -->
   </div>
-</section>
+
+</div>
+
+  </section>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.fade-slide');
+  let current = 0;
+
+  function showNextSlide() {
+    slides[current].style.opacity = 0;
+    current = (current + 1) % slides.length;
+    slides[current].style.opacity = 1;
+  }
+
+  setInterval(showNextSlide, 4000); // change photo every 4 seconds
+</script>
 
 <script>
   const roles = ["Data Analytics Student", "Project Management", "Civil Engineer", "Anaytical Thinker", "Detail-Oriented", "Dedicated", "Reliable", "Hardworking" ];
@@ -1125,6 +1208,25 @@
 
   updateDateTime(); // Initial call
   setInterval(updateDateTime, 60000); // Update every 60 seconds
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".fade-slide");
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    showSlide(currentIndex);
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }, 4000);
+  });
 </script>
 
 </body>
